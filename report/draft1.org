@@ -1,0 +1,43 @@
+#+TITLE: Youth Health Outcomes
+#+AUTHOR: Daniel Liden
+
+* Introduction
+  In this report, we review some of the most pressing health issues facing Nevada's youth. In particular, this report focuses on the health outcomes of Nevadans aged 14-24. While young people are less likely to suffer from health issues that are strongly correlated with age, such as cardiovascular disease and cancer, they are particularly suceptible to health issues related to social and behavioral factors. Some of these potential health problems include:
+  - mental illness, such as depression
+  - suicide
+  - substance abuse
+  - sexually transmitted infections
+  - motor vehicle collisions
+
+  This report is divided into three main sections. The first presents data on poverty and on lack of health insurance, two key vulnerabilities that can make youths more susceptible to poor health outcomes. The second investigates some of the primary causes of death among young people, particularly suicide and accidental deaths (such as automobile accidents). The third and final section outlines high-risk behaviors, such as substance abuse, and their potential negative health impacts.
+
+* Access to Healthcare
+** Health Insurance
+   Many young people in Nevada lack health insurance.
+
+   [[~/images/uninsurance_logo.png]]
+
+  ** Poverty
+  
+   [[~/images/poverty_logo.png]]
+
+* Causes of Death Among Nevada's Youth
+  - Overdose?
+  - Accidental
+  - Homicide?
+  - From 2016 through 2018, the leading causes of death among youths aged 15-24 were (1) accidents/unintential injuries (26.5 per 100,000); suicide (18.2 per 100,000); Assault/homicide (14.2 per 100,000); malignant neoplasms (4.0 per 100,000); and heart diseases (3.0 per 100,000).
+    - Source: Centers for Disease Control and Prevention, National Center for Health Statistics. Multiple Cause of Death 1999-2018 on CDC WONDER Online Database, released in 2020. Data are from the Multiple Cause of Death Files, 1999-2018, as compiled from data provided by the 57 vital statistics jurisdictions through the Vital Statistics Cooperative Program. Accessed at http://wonder.cdc.gov/mcd-icd10.html on Oct 22, 2020 4:26:32 PM
+    - I think include unintential injuries and homicide.
+    - Just a note on unintential injuries: transport accidents account for 14.77/100000; other for 11.65 per 100000 among ages 15-24. Other includes e.g. poisoning; animal attacks; exposure; drowning; electrocution; falling. Transport accidents include automobile, boating, ATV, agricultural vehicles, trains; automobiles; pedestrians killed by vehicles.
+
+ 
+** Suicide
+*** NOTES
+    - Followed [[https://www.cdc.gov/nchs/data/nvsr/nvsr69/NVSR-69-11-508.pdf][this report]] for suicide classification codes, but excluded U03, which stands for suicide in the context of terrorism. So I included codes X60-X84 and Y87.0.
+    - Citation: Centers for Disease Control and Prevention, National Center for Health Statistics. Multiple Cause of Death 1999-2018 on CDC WONDER Online Database, released in 2020. Data are from the Multiple Cause of Death Files, 1999-2018, as compiled from data provided by the 57 vital statistics jurisdictions through the Vital Statistics Cooperative Program. Accessed at http://wonder.cdc.gov/mcd-icd10.html on Oct 21, 2020 4:21:16 PM
+*** Questions
+    - Which age groups have the highest suicide rates in general? (seems to increase w age)
+** Homicide
+   Don't want to include in as much detail, but does seem like a significant risk factor.
+** Accidental Deaths
+   Least detail? Least related to health risk factors or social factors (by my estimation at least), but still the most significant cause of death for this age group, so worth noting. When transport accidents are removed, we end up with suicide > transport accidents > homicide, and then a steep drop off to cancer, heart, congenital.

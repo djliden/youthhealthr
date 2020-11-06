@@ -18,4 +18,8 @@ Imports:
     dplyr,
     utils,
     guinnr,
-    ggplot2
+    ggplot2,
+    tibble,
+    lubridate
+Depends: 
+    R (>= 2.10)

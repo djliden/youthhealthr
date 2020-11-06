@@ -20,6 +20,9 @@ Imports:
     guinnr,
     ggplot2,
     tibble,
-    lubridate
+    lubridate,
+    tidycensus,
+    tigris,
+    shadowtext
 Depends: 
     R (>= 2.10)

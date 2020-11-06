@@ -12,8 +12,8 @@ get_metrics = function(data=druguse){
 }
 
 druguse_single_plot <- function(data=druguse, metric, path = "~/images/") {
-    data = dplyr::filter(druguse, metric==metric)
-    fig = fig_base(data) +
+    sub = data[data[['metric']] == metric,]
+    fig = fig_base(sub) +
         geom_col(width = 0.5, mapping = aes(x=state, y=estimate, fill=age_group),
                  position=position_dodge(0.5)) +
         scale_y_continuous(labels = function(x) stringr::str_c(x*100, "%"),

@@ -35,3 +35,18 @@
 ##'
 ##' @source \url{https://www.samhsa.gov/data/report/2017-2018-nsduh-state-specific-tables}
 "druguse"
+
+
+##' 2019 Unemployment by Age Group in Nevada
+##'
+##' A dataset showing the unemployment rate, by age group, in Nevada in 2019.
+##' (Annual Average unemployment rate)
+##'
+##' @format a tibble with 4 rows and 2 columns:
+##' \describe{
+##'   \item{group:}{Age group (total, 16-24, 25-54, 55+}
+##'   \item{unemployment rate:}{unemployment rate as % of labor force}
+##' }
+##'
+##' @source \url{https://www.samhsa.gov/data/report/2017-2018-nsduh-state-specific-tables}
+"unemployment_age"

@@ -98,7 +98,7 @@ plot_PUMS_race_ethnicity <- function(data = get_pums_race(), save = FALSE,
     data <- dplyr::filter(data, agecat != "0-13")
     fig = fig_base(data) +
         geom_col(width = 0.5, mapping = aes(x=stringr::str_wrap(race_ethnicity, 14),
-                                            y=number, fill=agecat),
+                                            y=pct, fill=agecat),
                  position=position_dodge(0.5)) +
         scale_y_continuous(labels = function(x) stringr::str_c(x*100, "%"),
                            limits = c(0,0.9), name = "Percentage in Age Group",
@@ -107,7 +107,7 @@ plot_PUMS_race_ethnicity <- function(data = get_pums_race(), save = FALSE,
         scale_fill_manual(values = c("#682977", "#928e96"),
                           name = "Age",
                           guide = guide_legend(nrow=1)) +
-        ggtitle("Youth in Poverty in Nevada\nby Race and Ethnicity") +
+        ggtitle("Age Group by Race/Ethnicity in Nevada") +
         xlab(NULL) +
         theme(legend.position = "bottom",
               legend.text = element_text(size=8),
@@ -116,7 +116,7 @@ plot_PUMS_race_ethnicity <- function(data = get_pums_race(), save = FALSE,
     if(!save){
         return(fig)
     } else {
-        save_fig(fig=fig, loc=path, name="poverty_race.png",
+        save_fig(fig=fig, loc=path, name="age_race.png",
                  width = 6.5, height = 4)
         }
 }

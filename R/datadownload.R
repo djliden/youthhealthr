@@ -40,7 +40,14 @@ fetch_hnv <- function(path = "~/data_share/youth/") {
     }
     readr::read_csv(stringr::str_c(path, "hnv.csv"))
 }
-
+##' get person-level PUMS data
+##'
+##' 2019 1-year person-level PUMS data with urban/rural classification
+##' Clark and Washoe Counties classified as urban; rest classified as rural
+##' @title 
+##' @param path 
+##' @return 
+##' @author Daniel James Liden
 fetch_pnv <- function(path = "~/data_share/youth/") {
     if(!file.exists(stringr::str_c(path, "pnv.csv"))){
         get_pums(path=path, hnv=FALSE, pnv=TRUE, refresh = TRUE)

@@ -50,3 +50,40 @@
 ##'
 ##' @source \url{https://www.samhsa.gov/data/report/2017-2018-nsduh-state-specific-tables}
 "unemployment_age"
+
+
+##' 2015-2019 4-year graduation rates in Nevada
+##'
+##' A dataset showing the 4-year graduation rate by race in Nevada 
+##'
+##' @format a tibble with 40 rows and 3 columns:
+##' \describe{
+##'   \item{Group:}{Race/Ethnicity}
+##'   \item{rate:}{4-year graduation rate}
+##'   \item{year:}{Graduating class year (e.g. 2015 = class of 2015}
+##' }
+##'
+##' @source \url{https://www.samhsa.gov/data/report/2017-2018-nsduh-state-specific-tables}
+"gradrate"
+
+
+
+##' educational attainment by age group in Nevada
+##'
+##' A dataset showing educational attainment by age group for Nevadans
+##' aged 18-24 and 25+. Education categories are:
+##' - Less than high school
+##' - High school graduate or equivalent
+##' - Some college or associate's degree
+##' - Bachelor's degree or Higher
+##'
+##' @format a data frame with 16 rows and 4 columns:
+##' \describe{
+##'   \item{attainment:}{level of educational attainment}
+##'   \item{percent:}{percent of Nevadans within age group with specified level of education}
+##'   \item{age:}{age group, 18-24 or 25+}
+##'   \item{geo:}{geography (Nevada or National)
+##' }
+##'
+##' @source \url{https://data.census.gov/cedsci/table?q=Educational%20Attainment&g=0400000US32&tid=ACSST5Y2019.S1501&moe=false&hidePreview=true}
+"ed_attainment"

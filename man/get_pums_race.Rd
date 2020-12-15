@@ -4,7 +4,10 @@
 \alias{get_pums_race}
 \title{}
 \usage{
-get_pums_race(age_breaks = c(14, 24, 99), age_labels = c("14-24", "25+"))
+get_pums_race(
+  age_breaks = c(0, 14, 24, 99),
+  age_labels = c("0-13", "14-24", "25+")
+)
 }
 \arguments{
 \item{age_breaks}{min age, max age, and any breaks in between (numerical)}

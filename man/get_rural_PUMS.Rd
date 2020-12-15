@@ -4,7 +4,10 @@
 \alias{get_rural_PUMS}
 \title{Age by Urban/Rural County Classification}
 \usage{
-get_rural_PUMS(age_breaks = c(14, 24, 99), labels = c("14-24", "25+"))
+get_rural_PUMS(
+  age_breaks = c(0, 14, 24, 99),
+  labels = c("0-13", "14-24", "25+")
+)
 }
 \arguments{
 \item{age_breaks}{min age, max age, and any breaks in between (numerical)}

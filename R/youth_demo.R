@@ -96,6 +96,7 @@ plot_PUMS_urban_rural <- function(data = get_rural_PUMS(), save = FALSE,
 plot_PUMS_race_ethnicity <- function(data = get_pums_race(), save = FALSE,
                                              path = "~/images/") {
     data <- dplyr::filter(data, agecat != "0-13")
+    
     fig = fig_base(data) +
         geom_col(width = 0.5, mapping = aes(x=stringr::str_wrap(race_ethnicity, 14),
                                             y=pct, fill=agecat),

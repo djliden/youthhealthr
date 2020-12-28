@@ -1,7 +1,16 @@
 ## download PUMS data
-get_pums <- function(path = "~/data_share/youth/", pnv = TRUE, hnv = TRUE, refresh = FALSE) {
-    pnv_pums_URL = "https://www2.census.gov/programs-surveys/acs/data/pums/2019/1-Year/csv_pnv.zip"
-    hnv_pums_URL = "https://www2.census.gov/programs-surveys/acs/data/pums/2019/1-Year/csv_hnv.zip"
+get_pums <- function(path = "~/data_share/youth/", pnv = TRUE, hnv = TRUE, refresh = FALSE,
+                     survey = "acs1") {
+    if(survey=="acs1"){
+        pnv_pums_URL = "https://www2.census.gov/programs-surveys/acs/data/pums/2019/1-Year/csv_pnv.zip"
+        hnv_pums_URL = "https://www2.census.gov/programs-surveys/acs/data/pums/2019/1-Year/csv_hnv.zip"
+    } else if(survey=="acs5") {
+        pnv_pums_URL = "https://www2.census.gov/programs-surveys/acs/data/pums/2019/5-Year/csv_pnv.zip"
+        hnv_pums_URL = "https://www2.census.gov/programs-surveys/acs/data/pums/2019/5-Year/csv_hnv.zip"
+    } else {
+        "Please enter 'acs1' or 'acs5' for survey"
+    }
+    
     if(pnv){
         if(!dir.exists(path)){
             dir.create(path)

@@ -108,8 +108,19 @@ plot_poverty_PUMS_urban_rural <- function(data = get_poverty_PUMS(), save = FALS
 ##' ggtitle aes guide_legend element_text theme xlab
 plot_poverty_PUMS_race_ethnicity <- function(data = get_poverty_pums_race(), save = FALSE,
                                              path = "~/images/") {
+    data <- dplyr::filter(data, race_ethnicity != "Not Hispanic or Latino")
+    data$race_ethnicity = factor(data$race_ethnicity)
+    data$race_ethnicity = forcats::fct_relevel(data$race_ethnicity,
+                                               "Black or African American",
+                                               "Hispanic or Latino Origin",
+                                               "White (all)",
+                                               "Two or More Races",
+                                               "American Indian and Alaska Native",
+                                               "Some Other Race",
+                                               "Asian",
+                                               "Native Hawaiian and Other Pacific Islander")
     fig = fig_base(data) +
-        geom_col(width = 0.5, mapping = aes(x=stringr::str_wrap(race_ethnicity, 14),
+        geom_col(width = 0.5, mapping = aes(x=race_ethnicity,
                                             y=number, fill=agecat),
                  position=position_dodge(0.5)) +
         scale_y_continuous(labels = function(x) stringr::str_c(x*100, "%"),
@@ -119,6 +130,7 @@ plot_poverty_PUMS_race_ethnicity <- function(data = get_poverty_pums_race(), sav
         scale_fill_manual(values = c("#682977", "#928e96"),
                           name = "Age",
                           guide = guide_legend(nrow=1)) +
+        scale_x_discrete(labels = function(x) stringr::str_wrap(x,14)) +
         ggtitle("Youth in Poverty in Nevada\nby Race and Ethnicity") +
         xlab(NULL) +
         theme(legend.position = "bottom",

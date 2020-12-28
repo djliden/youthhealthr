@@ -48,7 +48,7 @@ plot_grad_rate <- function(data = gradrate, save = FALSE,
 ##' @param path 
 ##' @return 
 ##' @author Daniel James Liden
-##' @importFrom ggplot2 scale_x_discrete
+##' @importFrom ggplot2 scale_x_discrete element_blank
 plot_ed_attainment <- function(data = ed_attainment,
                                save = FALSE,
                                path = "~/images/") {
@@ -62,14 +62,14 @@ plot_ed_attainment <- function(data = ed_attainment,
                            expand = c(0,0),
                            breaks = c(5,10,15,20,25,30,35, 40, 45)) +
         scale_fill_manual(values = c("#682977", "#928e96"),
-                          name = "Age",
                           guide = guide_legend(nrow=1)) +
         scale_x_discrete(labels = function(x) stringr::str_wrap(x, width = 14)) +
-        ggtitle("Educational Attainment in Nevada") +
+        ggtitle("Educational Attainment among Nevadans\naged 18 to 24") +
         xlab(NULL) +
         theme(legend.position = "bottom",
               legend.text = element_text(size=8),
-              axis.text.x = element_text(size=8)) +
+              axis.text.x = element_text(size=8),
+              legend.title=element_blank()) +
         apply_theme()
     
     if(!save){

@@ -163,7 +163,7 @@ plot_PUMS_race_ethnicity_n <- function(data = get_pums_race(), save = FALSE,
                            expand = c(0,0),
                            breaks = c(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6)) +
         scale_x_discrete(labels = function(x) stringr::str_wrap(x,14)) +
-        scale_fill_manual(values=c("Race" = "#682977", "Ethnicity" = "#928e96")) +
+        scale_fill_manual(values=c("Race" = "#682977", "Ethnicity" = "#a786ac")) +
         ggtitle("Racial/Ethnic Composition of\nYouth Population in Nevada") +
         xlab(NULL) +
         theme(legend.position = "none",

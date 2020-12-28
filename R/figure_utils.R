@@ -52,7 +52,7 @@ save_fig <- function(fig, width = 6.9, height = 5,
                      name = paste0("fig_", Sys.Date(), ".png"),
                      loc = "../figs/") {
     logo = magick::image_read(system.file("/imgs/logo.png",
-                                          package = "AZCovidData"))
+                                          package = "youthhealthr"))
     ggplot2::ggsave(fig, device = "png",
                     filename = paste0(loc, name), dpi = 300,
                     height = height, width = width, units = "in")

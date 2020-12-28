@@ -95,10 +95,19 @@ plot_PUMS_urban_rural <- function(data = get_rural_PUMS(), save = FALSE,
 
 plot_PUMS_race_ethnicity <- function(data = get_pums_race(), save = FALSE,
                                              path = "~/images/") {
-    data <- dplyr::filter(data, agecat != "0-13")
-    
+    data <- dplyr::filter(data, agecat != "0-13",
+                          race_ethnicity != "Not Hispanic or Latino")
+    data$race_ethnicity = factor(data$race_ethnicity)
+    data$race_ethnicity = forcats::fct_relevel(data$race_ethnicity,
+                                               "Native Hawaiian and Other Pacific Islander",
+                                               "Two or More Races",
+                                               "Hispanic or Latino Origin",
+                                               "Some Other Race",
+                                               "American Indian and Alaska Native",
+                                               "Black or African American",
+                                               "White (all)")
     fig = fig_base(data) +
-        geom_col(width = 0.5, mapping = aes(x=stringr::str_wrap(race_ethnicity, 14),
+        geom_col(width = 0.5, mapping = aes(x=race_ethnicity,
                                             y=pct, fill=agecat),
                  position=position_dodge(0.5)) +
         scale_y_continuous(labels = function(x) stringr::str_c(x*100, "%"),
@@ -108,6 +117,7 @@ plot_PUMS_race_ethnicity <- function(data = get_pums_race(), save = FALSE,
         scale_fill_manual(values = c("#682977", "#928e96"),
                           name = "Age",
                           guide = guide_legend(nrow=1)) +
+        scale_x_discrete(labels = function(x) stringr::str_wrap(x,14)) +
         ggtitle("Age Group by Race/Ethnicity in Nevada") +
         xlab(NULL) +
         theme(legend.position = "bottom",

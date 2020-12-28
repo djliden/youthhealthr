@@ -31,10 +31,10 @@ plot_grad_rate <- function(data = gradrate, save = FALSE,
 }
 
 
-ed_attainment_us = data.frame(
-    attainment = ed_attainment$attainment,
-    percent = c(12.6, 31.4, 44.8, 11.2, 12.0, 27.0, 32.5, 32.1),
-    age = ed_attainment$age)
+#ed_attainment_us = data.frame(
+#    attainment = ed_attainment$attainment,
+#    percent = c(12.6, 31.4, 44.8, 11.2, 12.0, 27.0, 32.5, 32.1),
+#    age = ed_attainment$age)
 
 
 

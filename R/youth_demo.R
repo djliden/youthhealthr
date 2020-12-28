@@ -131,3 +131,50 @@ plot_PUMS_race_ethnicity <- function(data = get_pums_race(), save = FALSE,
                  width = 6.5, height = 4)
         }
 }
+
+plot_PUMS_race_ethnicity_n <- function(data = get_pums_race(), save = FALSE,
+                                             path = "~/images/") {
+    . <- data
+    . <- dplyr::filter(., agecat == "14-24")
+    total = sum(.$number[.$race_ethnicity %in% c("Hispanic or Latino Origin",
+                                                 "Not Hispanic or Latino")])
+    . <- dplyr::mutate(., pct = number/total)
+    #. <- dplyr::arrange(., desc(pct))
+    data <- .
+    data$race_ethnicity = factor(data$race_ethnicity)
+    data$race_ethnicity = forcats::fct_relevel(data$race_ethnicity,
+                                               "White (all)",
+                                               "Some Other Race",
+                                               "Black or African American",
+                                               "Asian",
+                                               "Two or More Races",
+                                               "American Indian and Alaska Native",
+                                               "Native Hawaiian and Other Pacific Islander",
+                                               "Not Hispanic or Latino",
+                                               "Hispanic or Latino Origin")
+    data$cat = c(rep("Race",7), rep("Ethnicity", 2))
+
+   #data$color = c(rep("#682977",7), rep("#928e96", 2))
+    
+    fig = fig_base(data) +
+        geom_col(width = 0.5, mapping = aes(x=race_ethnicity, y=pct, fill=cat)) +
+        scale_y_continuous(labels = function(x) stringr::str_c(x*100, "%"),
+                           limits = c(0,0.6), name = "Percentage of Youth Population",
+                           expand = c(0,0),
+                           breaks = c(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6)) +
+        scale_x_discrete(labels = function(x) stringr::str_wrap(x,14)) +
+        scale_fill_manual(values=c("Race" = "#682977", "Ethnicity" = "#928e96")) +
+        ggtitle("Racial/Ethnic Composition of\nYouth Population in Nevada") +
+        xlab(NULL) +
+        theme(legend.position = "none",
+              legend.text = element_text(size=8),
+              axis.text.x = element_text(size=7)) +
+        apply_theme()
+    if(!save){
+        return(fig)
+    } else {
+        save_fig(fig=fig, loc=path, name="race_ethnicity.png",
+                 width = 6.5, height = 4)
+        }
+}
+

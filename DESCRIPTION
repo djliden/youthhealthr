@@ -22,7 +22,6 @@ Imports:
     tibble,
     lubridate,
     tidycensus,
-    tigris,
     shadowtext,
     forcats
 Depends: 

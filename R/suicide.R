@@ -12,7 +12,6 @@
 ##' @param path directory to which to save the image
 plot_suicide_time <- function(data = suicide, save = FALSE,
                               path = "~/images/") {
-  #  data = dplyr::filter(data, state=="Nevada")
     data$year = lubridate::as_date(ISOdate(data$year,1,1))
     fig = fig_base(data) +
         geom_line(mapping = aes(x=year, y=rate_per_100000, color = age_range),
